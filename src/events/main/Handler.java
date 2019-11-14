@@ -43,7 +43,7 @@ public class Handler implements Listener, CommandExecutor{
 		
 		int amount = settings.getData().getInt(p.getName() + ".amount");
 		
-		/*Проверка истории сбора деталей. НАЧАЛО*/
+		/*РџСЂРѕРІРµСЂРєР° РёСЃС‚РѕСЂРёРё СЃР±РѕСЂР° РґРµС‚Р°Р»РµР№. РќРђР§РђР›Рћ*/
 		for (int i = 0; i < amount; i++) {
 			
 			String check = settings.getData().getString(p.getName() + ".history." + i);
@@ -58,7 +58,7 @@ public class Handler implements Listener, CommandExecutor{
 			
 			if ((x == tx) && (y == ty) && (z == tz)) {
 				
-				p.sendMessage(ChatColor.YELLOW + "[Ивент]" + ChatColor.WHITE + " Эту деталь ты уже нашел.");
+				p.sendMessage(ChatColor.YELLOW + "[РРІРµРЅС‚]" + ChatColor.WHITE + " Р­С‚Сѓ РґРµС‚Р°Р»СЊ С‚С‹ СѓР¶Рµ РЅР°С€РµР».");
 				
 				p.playSound(p.getLocation(), Sound.ENTITY_VILLAGER_NO, 1, 1);
 				
@@ -67,18 +67,18 @@ public class Handler implements Listener, CommandExecutor{
 			}
 			
 		}
-		/*Проверка истории сбора деталей. КОНЕЦ*/
+		/*РџСЂРѕРІРµСЂРєР° РёСЃС‚РѕСЂРёРё СЃР±РѕСЂР° РґРµС‚Р°Р»РµР№. РљРћРќР•Р¦*/
 		
-		/*Проверка сбора новой детали. НАЧАЛО*/
+		/*РџСЂРѕРІРµСЂРєР° СЃР±РѕСЂР° РЅРѕРІРѕР№ РґРµС‚Р°Р»Рё. РќРђР§РђР›Рћ*/
 		for (int i = 0; i < 50; i++) {
 			
 			if ((array_x[i] == tx) && (array_y[i] == ty) && (array_z[i] == tz)) {
 				
-				p.sendMessage(ChatColor.YELLOW + "[Ивент]" + ChatColor.WHITE + " Деталь найдена!");
+				p.sendMessage(ChatColor.YELLOW + "[РРІРµРЅС‚]" + ChatColor.WHITE + " Р”РµС‚Р°Р»СЊ РЅР°Р№РґРµРЅР°!");
 				
 				if(p.hasPermission("dr.events.start") && (amount+1 <= 50)) {
 					
-					String message = "&a&lСобрано деталей: " + (amount+1) + " из 50";
+					String message = "&a&lРЎРѕР±СЂР°РЅРѕ РґРµС‚Р°Р»РµР№: " + (amount+1) + " РёР· 50";
 					
 					message = message.replace("&","\u00a7");
 					
@@ -97,7 +97,7 @@ public class Handler implements Listener, CommandExecutor{
 			}
 			
 		}
-		/*Проверка сбора новой детали. КОНЕЦ*/
+		/*РџСЂРѕРІРµСЂРєР° СЃР±РѕСЂР° РЅРѕРІРѕР№ РґРµС‚Р°Р»Рё. РљРћРќР•Р¦*/
 		
 	}	
 	
@@ -118,7 +118,7 @@ public class Handler implements Listener, CommandExecutor{
 
 		if ((world.compareToIgnoreCase("world") == 0)){
 			
-			/*Выбор награды после конца ивента. Если есть старт и нет награды. НАЧАЛО*/
+			/*Р’С‹Р±РѕСЂ РЅР°РіСЂР°РґС‹ РїРѕСЃР»Рµ РєРѕРЅС†Р° РёРІРµРЅС‚Р°. Р•СЃР»Рё РµСЃС‚СЊ СЃС‚Р°СЂС‚ Рё РЅРµС‚ РЅР°РіСЂР°РґС‹. РќРђР§РђР›Рћ*/
 			if ((p.hasPermission("dr.events.start")) && (!p.hasPermission("dr.events.rewardoff") && (((X >= 14) && (X <= 24)) && ((Y >= 95) && (Y <= 105)) && ((Z >= 193) && (Z <= 203))) && (!cooldown.contains(p)))) {
 				
 				int value = settings.getData().getInt(p.getName() + ".amount");
@@ -126,15 +126,15 @@ public class Handler implements Listener, CommandExecutor{
 					if (value >= 50) {
 						
 						p.sendMessage(ChatColor.GRAY + "----------------------------------------------------------");
-						p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "О, привет. Как и договаривались. Смотри, что есть.");
-						p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "1 | Два комплекта брони");						
-						p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "2 | Два комплекта инструментов");
-						p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "3 | 36 стеков различных блоков");
-						p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "Выбирай что-то одно.");
+						p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "Рћ, РїСЂРёРІРµС‚. РљР°Рє Рё РґРѕРіРѕРІР°СЂРёРІР°Р»РёСЃСЊ. РЎРјРѕС‚СЂРё, С‡С‚Рѕ РµСЃС‚СЊ.");
+						p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "1 | Р”РІР° РєРѕРјРїР»РµРєС‚Р° Р±СЂРѕРЅРё");						
+						p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "2 | Р”РІР° РєРѕРјРїР»РµРєС‚Р° РёРЅСЃС‚СЂСѓРјРµРЅС‚РѕРІ");
+						p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "3 | 36 СЃС‚РµРєРѕРІ СЂР°Р·Р»РёС‡РЅС‹С… Р±Р»РѕРєРѕРІ");
+						p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "Р’С‹Р±РёСЂР°Р№ С‡С‚Рѕ-С‚Рѕ РѕРґРЅРѕ.");
 						p.sendMessage(ChatColor.GRAY + "----------------------------------------------------------");
-						p.sendMessage(ChatColor.YELLOW + "[Ивент] " + ChatColor.WHITE + "Чтобы забрать броню, пропиши" + ChatColor.BLUE +" /event armor");
-						p.sendMessage(ChatColor.YELLOW + "[Ивент] " + ChatColor.WHITE + "Чтобы забрать инструменты, пропиши" + ChatColor.GREEN +" /event tools");
-						p.sendMessage(ChatColor.YELLOW + "[Ивент] " + ChatColor.WHITE + "Чтобы забрать блоки, пропиши" + ChatColor.GRAY +" /event blocks");
+						p.sendMessage(ChatColor.YELLOW + "[РРІРµРЅС‚] " + ChatColor.WHITE + "Р§С‚РѕР±С‹ Р·Р°Р±СЂР°С‚СЊ Р±СЂРѕРЅСЋ, РїСЂРѕРїРёС€Рё" + ChatColor.BLUE +" /event armor");
+						p.sendMessage(ChatColor.YELLOW + "[РРІРµРЅС‚] " + ChatColor.WHITE + "Р§С‚РѕР±С‹ Р·Р°Р±СЂР°С‚СЊ РёРЅСЃС‚СЂСѓРјРµРЅС‚С‹, РїСЂРѕРїРёС€Рё" + ChatColor.GREEN +" /event tools");
+						p.sendMessage(ChatColor.YELLOW + "[РРІРµРЅС‚] " + ChatColor.WHITE + "Р§С‚РѕР±С‹ Р·Р°Р±СЂР°С‚СЊ Р±Р»РѕРєРё, РїСЂРѕРїРёС€Рё" + ChatColor.GRAY +" /event blocks");
 						p.sendMessage(ChatColor.GRAY + "----------------------------------------------------------");
 						
 						cooldown.add(p);
@@ -150,9 +150,9 @@ public class Handler implements Listener, CommandExecutor{
 					}
 					
 			}
-			/*Выбор награды после конца ивента. Если есть старт и нет награды. КОНЕЦ*/
+			/*Р’С‹Р±РѕСЂ РЅР°РіСЂР°РґС‹ РїРѕСЃР»Рµ РєРѕРЅС†Р° РёРІРµРЅС‚Р°. Р•СЃР»Рё РµСЃС‚СЊ СЃС‚Р°СЂС‚ Рё РЅРµС‚ РЅР°РіСЂР°РґС‹. РљРћРќР•Р¦*/
 			
-			/*Квест - помощи НАЧАЛО*/
+			/*РљРІРµСЃС‚ - РїРѕРјРѕС‰Рё РќРђР§РђР›Рћ*/
 			if (!p.hasPermission("dr.events.start") && ( ((X >= 14) && (X <= 24)) && ((Y >= 95) && (Y <= 105)) && ((Z >= 193) && (Z <= 203))) && (!cooldown.contains(p))) {	
 				
 				Random rand = new Random();
@@ -161,41 +161,41 @@ public class Handler implements Listener, CommandExecutor{
 				
 				if (value == 0) {
 					
-					p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "Эй, ты!");
-					p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "Мне нужна твоя помощь.");
-					p.sendMessage(ChatColor.YELLOW + "[Ивент] " + ChatColor.GRAY + "Напиши /event, чтобы начать ивент");
+					p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "Р­Р№, С‚С‹!");
+					p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РњРЅРµ РЅСѓР¶РЅР° С‚РІРѕСЏ РїРѕРјРѕС‰СЊ.");
+					p.sendMessage(ChatColor.YELLOW + "[РРІРµРЅС‚] " + ChatColor.GRAY + "РќР°РїРёС€Рё /event, С‡С‚РѕР±С‹ РЅР°С‡Р°С‚СЊ РёРІРµРЅС‚");
 					
 				}
 				
 				if (value == 1) {
 					
-					p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "Извини!");
-					p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "Не мог бы ты мне помочь?.");
-					p.sendMessage(ChatColor.YELLOW + "[Ивент] " + ChatColor.GRAY + "Напиши /event, чтобы начать ивент");
+					p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РР·РІРёРЅРё!");
+					p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РќРµ РјРѕРі Р±С‹ С‚С‹ РјРЅРµ РїРѕРјРѕС‡СЊ?.");
+					p.sendMessage(ChatColor.YELLOW + "[РРІРµРЅС‚] " + ChatColor.GRAY + "РќР°РїРёС€Рё /event, С‡С‚РѕР±С‹ РЅР°С‡Р°С‚СЊ РёРІРµРЅС‚");
 					
 				}
 				
 				if (value == 2) {
 					
-					p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "Эх...");
-					p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "Что же делать?!");
-					p.sendMessage(ChatColor.YELLOW + "[Ивент] " + ChatColor.GRAY + "Напиши /event, чтобы начать ивент");
+					p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "Р­С…...");
+					p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "Р§С‚Рѕ Р¶Рµ РґРµР»Р°С‚СЊ?!");
+					p.sendMessage(ChatColor.YELLOW + "[РРІРµРЅС‚] " + ChatColor.GRAY + "РќР°РїРёС€Рё /event, С‡С‚РѕР±С‹ РЅР°С‡Р°С‚СЊ РёРІРµРЅС‚");
 					
 				}
 				
 				if (value == 3) {
 					
-					p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "О, привет!");
-					p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "Поможешь мне с одним делом?");
-					p.sendMessage(ChatColor.YELLOW + "[Ивент] " + ChatColor.GRAY + "Напиши /event, чтобы начать ивент");
+					p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "Рћ, РїСЂРёРІРµС‚!");
+					p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РџРѕРјРѕР¶РµС€СЊ РјРЅРµ СЃ РѕРґРЅРёРј РґРµР»РѕРј?");
+					p.sendMessage(ChatColor.YELLOW + "[РРІРµРЅС‚] " + ChatColor.GRAY + "РќР°РїРёС€Рё /event, С‡С‚РѕР±С‹ РЅР°С‡Р°С‚СЊ РёРІРµРЅС‚");
 					
 				}
 				
 				if (value == 4) {
 					
-					p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "Да бл*ть!");
-					p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "Еб*чий дирижабль!");
-					p.sendMessage(ChatColor.YELLOW + "[Ивент] " + ChatColor.GRAY + "Напиши /event, чтобы начать ивент");
+					p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "Р”Р° Р±Р»*С‚СЊ!");
+					p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "Р•Р±*С‡РёР№ РґРёСЂРёР¶Р°Р±Р»СЊ!");
+					p.sendMessage(ChatColor.YELLOW + "[РРІРµРЅС‚] " + ChatColor.GRAY + "РќР°РїРёС€Рё /event, С‡С‚РѕР±С‹ РЅР°С‡Р°С‚СЊ РёРІРµРЅС‚");
 					
 				}
 
@@ -208,29 +208,29 @@ public class Handler implements Listener, CommandExecutor{
 				}, 120);
 				
 			}
-			/*Квест - помощи КОНЕЦ*/
+			/*РљРІРµСЃС‚ - РїРѕРјРѕС‰Рё РљРћРќР•Р¦*/
 			
-			/*Сообщения после начала инвента. НАЧАЛО*/
+			/*РЎРѕРѕР±С‰РµРЅРёСЏ РїРѕСЃР»Рµ РЅР°С‡Р°Р»Р° РёРЅРІРµРЅС‚Р°. РќРђР§РђР›Рћ*/
 			if (p.hasPermission("dr.events.start") && ( ((X >= 14) && (X <= 24)) && ((Y >= 95) && (Y <= 105)) && ((Z >= 193) && (Z <= 203))) && (!cooldown.contains(p))) {
 				
 				int amount = settings.getData().getInt(p.getName() + ".amount");
 				
-				/*Если инвент закончен. НАЧАЛО*/
+				/*Р•СЃР»Рё РёРЅРІРµРЅС‚ Р·Р°РєРѕРЅС‡РµРЅ. РќРђР§РђР›Рћ*/
 				if ((amount >= 50) && (p.hasPermission("dr.events.rewardoff"))) {
 					
 					Random rand = new Random();
 					
 					int value = rand.nextInt(5);
 					
-					if (value <= 0) {p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "Спасибо за помощь.");}
+					if (value <= 0) {p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РЎРїР°СЃРёР±Рѕ Р·Р° РїРѕРјРѕС‰СЊ.");}
 					
-					if (value == 1) {p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "Привет дружище! Спасибо еще раз.");}
+					if (value == 1) {p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РџСЂРёРІРµС‚ РґСЂСѓР¶РёС‰Рµ! РЎРїР°СЃРёР±Рѕ РµС‰Рµ СЂР°Р·.");}
 					
-					if (value == 2) {p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "Знал бы ты, как сильно я тебе благодарен.");}
+					if (value == 2) {p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "Р—РЅР°Р» Р±С‹ С‚С‹, РєР°Рє СЃРёР»СЊРЅРѕ СЏ С‚РµР±Рµ Р±Р»Р°РіРѕРґР°СЂРµРЅ.");}
 					
-					if (value == 3) {p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "Мир не без добрых людей.");}
+					if (value == 3) {p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РњРёСЂ РЅРµ Р±РµР· РґРѕР±СЂС‹С… Р»СЋРґРµР№.");}
 					
-					if (value == 4) {p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "Еще раз спасибо.");}
+					if (value == 4) {p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "Р•С‰Рµ СЂР°Р· СЃРїР°СЃРёР±Рѕ.");}
 					
 					cooldown.add(p);
 					
@@ -242,24 +242,24 @@ public class Handler implements Listener, CommandExecutor{
 
 					
 				}
-				/*Если инвент закончен. КОНЕЦ*/
+				/*Р•СЃР»Рё РёРЅРІРµРЅС‚ Р·Р°РєРѕРЅС‡РµРЅ. РљРћРќР•Р¦*/
 
-				/*Если инвент продолжается. НАЧАЛО*/
+				/*Р•СЃР»Рё РёРЅРІРµРЅС‚ РїСЂРѕРґРѕР»Р¶Р°РµС‚СЃСЏ. РќРђР§РђР›Рћ*/
 				if ((amount < 50) && (!p.hasPermission("dr.events.rewardoff"))) {
 					
 					Random rand = new Random();
 					
 					int value = rand.nextInt(5);
 					
-					if (value <= 0) {p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "Как успехи?");}
+					if (value <= 0) {p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РљР°Рє СѓСЃРїРµС…Рё?");}
 					
-					if (value == 1) {p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "Как идут дела?");}
+					if (value == 1) {p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РљР°Рє РёРґСѓС‚ РґРµР»Р°?");}
 					
-					if (value == 2) {p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "Ну... Ты скоро?");}
+					if (value == 2) {p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РќСѓ... РўС‹ СЃРєРѕСЂРѕ?");}
 					
-					if (value == 3) {p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "Как же у меня болит спина...");}
+					if (value == 3) {p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РљР°Рє Р¶Рµ Сѓ РјРµРЅСЏ Р±РѕР»РёС‚ СЃРїРёРЅР°...");}
 					
-					if (value >= 4) {p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "Я надеюсь ты не забыл про наш уговор.");}
+					if (value >= 4) {p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РЇ РЅР°РґРµСЋСЃСЊ С‚С‹ РЅРµ Р·Р°Р±С‹Р» РїСЂРѕ РЅР°С€ СѓРіРѕРІРѕСЂ.");}
 					
 					cooldown.add(p);
 					
@@ -272,10 +272,10 @@ public class Handler implements Listener, CommandExecutor{
 					return;
 					
 				}
-				/*Если инвент продолжается. КОНЕЦ*/
+				/*Р•СЃР»Рё РёРЅРІРµРЅС‚ РїСЂРѕРґРѕР»Р¶Р°РµС‚СЃСЏ. РљРћРќР•Р¦*/
 				
 			}
-			/*Сообщения после начала инвента. КОНЕЦ*/
+			/*РЎРѕРѕР±С‰РµРЅРёСЏ РїРѕСЃР»Рµ РЅР°С‡Р°Р»Р° РёРЅРІРµРЅС‚Р°. РљРћРќР•Р¦*/
 			
 		}
 
@@ -288,13 +288,13 @@ public class Handler implements Listener, CommandExecutor{
 		
 		Player p = e.getPlayer();
 		
-		/*Отменять клики если ивент пройден или не начат. НАЧАЛО*/
+		/*РћС‚РјРµРЅСЏС‚СЊ РєР»РёРєРё РµСЃР»Рё РёРІРµРЅС‚ РїСЂРѕР№РґРµРЅ РёР»Рё РЅРµ РЅР°С‡Р°С‚. РќРђР§РђР›Рћ*/
 		if (value >= 50) {return;}	
 		
 		if (!p.hasPermission("dr.events.start")) {return;}
-		/*Отменять клики если ивент пройден или не начат. КОНЕЦ*/
+		/*РћС‚РјРµРЅСЏС‚СЊ РєР»РёРєРё РµСЃР»Рё РёРІРµРЅС‚ РїСЂРѕР№РґРµРЅ РёР»Рё РЅРµ РЅР°С‡Р°С‚. РљРћРќР•Р¦*/
 		
-		/*Запустить чекер, если совпадают мир и координаты. НАЧАЛО*/
+		/*Р—Р°РїСѓСЃС‚РёС‚СЊ С‡РµРєРµСЂ, РµСЃР»Рё СЃРѕРІРїР°РґР°СЋС‚ РјРёСЂ Рё РєРѕРѕСЂРґРёРЅР°С‚С‹. РќРђР§РђР›Рћ*/
 		if(e.getHand() == EquipmentSlot.OFF_HAND) {
 			
 			String world = e.getPlayer().getWorld().getName();
@@ -314,14 +314,14 @@ public class Handler implements Listener, CommandExecutor{
 			}
 
 		}
-		/*Запустить чекер, если совпадают мир и координаты. КОНЕЦ*/
+		/*Р—Р°РїСѓСЃС‚РёС‚СЊ С‡РµРєРµСЂ, РµСЃР»Рё СЃРѕРІРїР°РґР°СЋС‚ РјРёСЂ Рё РєРѕРѕСЂРґРёРЅР°С‚С‹. РљРћРќР•Р¦*/
 		
 	}
 	
 	@EventHandler
 	public void join(PlayerJoinEvent e) {
 		
-		/*Вывод ActionBar, если продолжается ивент. Если инвент не начался, то не считывать количество. НАЧАЛО*/
+		/*Р’С‹РІРѕРґ ActionBar, РµСЃР»Рё РїСЂРѕРґРѕР»Р¶Р°РµС‚СЃСЏ РёРІРµРЅС‚. Р•СЃР»Рё РёРЅРІРµРЅС‚ РЅРµ РЅР°С‡Р°Р»СЃСЏ, С‚Рѕ РЅРµ СЃС‡РёС‚С‹РІР°С‚СЊ РєРѕР»РёС‡РµСЃС‚РІРѕ. РќРђР§РђР›Рћ*/
 		Player p = e.getPlayer();
 		
 		if(!p.hasPermission("dr.events.start")) {return;}
@@ -330,14 +330,14 @@ public class Handler implements Listener, CommandExecutor{
 		
 		if(p.hasPermission("dr.events.start") && (amount < 50)) {
 			
-			String message = "&a&lСобрано деталей: " + amount + " из 50";
+			String message = "&a&lРЎРѕР±СЂР°РЅРѕ РґРµС‚Р°Р»РµР№: " + amount + " РёР· 50";
 			
 			message = message.replace("&","\u00a7");
 			
 			ActionBarAPI.sendActionBar(p, message);
 			
 		}
-		/*Вывод ActionBar, если продолжается ивент. Если инвент не начался, то не считывать количество. КОНЕЦ*/
+		/*Р’С‹РІРѕРґ ActionBar, РµСЃР»Рё РїСЂРѕРґРѕР»Р¶Р°РµС‚СЃСЏ РёРІРµРЅС‚. Р•СЃР»Рё РёРЅРІРµРЅС‚ РЅРµ РЅР°С‡Р°Р»СЃСЏ, С‚Рѕ РЅРµ СЃС‡РёС‚С‹РІР°С‚СЊ РєРѕР»РёС‡РµСЃС‚РІРѕ. РљРћРќР•Р¦*/
 		
 	}
 		
@@ -354,27 +354,27 @@ public class Handler implements Listener, CommandExecutor{
 		
 		int Z = (int) p.getLocation().getZ();		
 		
-		/*Команда EVENT. Вызов по радио. НАЧАЛО*/
+		/*РљРѕРјР°РЅРґР° EVENT. Р’С‹Р·РѕРІ РїРѕ СЂР°РґРёРѕ. РќРђР§РђР›Рћ*/
 		if (cmd.getName().equals("event") && (args.length == 0)) {
 			
-			/*Команда EVENT. НАЧАЛО*/
+			/*РљРѕРјР°РЅРґР° EVENT. РќРђР§РђР›Рћ*/
 			
-			/*Команда EVENT. Если рядом с NPC. НАЧАЛО*/
+			/*РљРѕРјР°РЅРґР° EVENT. Р•СЃР»Рё СЂСЏРґРѕРј СЃ NPC. РќРђР§РђР›Рћ*/
 				if ((((X >= 14) && (X <= 24)) && ((Y >= 95) && (Y <= 105)) && ((Z >= 193) && (Z <= 203)))){
 					
 					if (world.compareToIgnoreCase("world") != 0) {return true;}
 					
 					if(!p.hasPermission("dr.events.start")) {
 						
-						p.sendMessage(ChatColor.GREEN + p.getName()+ ": " + ChatColor.WHITE + "Хорошо. Рассказывай в чем проблема.");
+						p.sendMessage(ChatColor.GREEN + p.getName()+ ": " + ChatColor.WHITE + "РҐРѕСЂРѕС€Рѕ. Р Р°СЃСЃРєР°Р·С‹РІР°Р№ РІ С‡РµРј РїСЂРѕР±Р»РµРјР°.");
 						
-						String mes = "Я, собственно, командир этого дирижабля. Случилось так, что двигатель внезапно перестал работать. Причина неизвестна."
-								+ 	 " Дальнейшее передвижение, как видишь, невозможно."
-								+ 	 " На починку уйдет около месяца. Поэтому вылет назначен на ночь 31 марта."
-								+ 	 " Как я понимаю, детали разбросаны в этих окрестностях. Тебе нужно их найти."
-				   				+  	 " На борту, кстати, много всякого груза... Найдешь детали: груз твой!";
+						String mes = "РЇ, СЃРѕР±СЃС‚РІРµРЅРЅРѕ, РєРѕРјР°РЅРґРёСЂ СЌС‚РѕРіРѕ РґРёСЂРёР¶Р°Р±Р»СЏ. РЎР»СѓС‡РёР»РѕСЃСЊ С‚Р°Рє, С‡С‚Рѕ РґРІРёРіР°С‚РµР»СЊ РІРЅРµР·Р°РїРЅРѕ РїРµСЂРµСЃС‚Р°Р» СЂР°Р±РѕС‚Р°С‚СЊ. РџСЂРёС‡РёРЅР° РЅРµРёР·РІРµСЃС‚РЅР°."
+								+ 	 " Р”Р°Р»СЊРЅРµР№С€РµРµ РїРµСЂРµРґРІРёР¶РµРЅРёРµ, РєР°Рє РІРёРґРёС€СЊ, РЅРµРІРѕР·РјРѕР¶РЅРѕ."
+								+ 	 " РќР° РїРѕС‡РёРЅРєСѓ СѓР№РґРµС‚ РѕРєРѕР»Рѕ РјРµСЃСЏС†Р°. РџРѕСЌС‚РѕРјСѓ РІС‹Р»РµС‚ РЅР°Р·РЅР°С‡РµРЅ РЅР° РЅРѕС‡СЊ 31 РјР°СЂС‚Р°."
+								+ 	 " РљР°Рє СЏ РїРѕРЅРёРјР°СЋ, РґРµС‚Р°Р»Рё СЂР°Р·Р±СЂРѕСЃР°РЅС‹ РІ СЌС‚РёС… РѕРєСЂРµСЃС‚РЅРѕСЃС‚СЏС…. РўРµР±Рµ РЅСѓР¶РЅРѕ РёС… РЅР°Р№С‚Рё."
+				   				+  	 " РќР° Р±РѕСЂС‚Сѓ, РєСЃС‚Р°С‚Рё, РјРЅРѕРіРѕ РІСЃСЏРєРѕРіРѕ РіСЂСѓР·Р°... РќР°Р№РґРµС€СЊ РґРµС‚Р°Р»Рё: РіСЂСѓР· С‚РІРѕР№!";
 						
-						p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + mes);
+						p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + mes);
 					
 						Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user" + " " + p.getName() + " " + "add" + " " + "dr.events.start");
 							
@@ -382,7 +382,7 @@ public class Handler implements Listener, CommandExecutor{
 						
 						settings.saveData();
 						
-						Bukkit.getConsoleSender().sendMessage("Игрок " + p.getName() + " начал ивент!");
+						Bukkit.getConsoleSender().sendMessage("РРіСЂРѕРє " + p.getName() + " РЅР°С‡Р°Р» РёРІРµРЅС‚!");
 						
 						return true;
 						
@@ -393,47 +393,47 @@ public class Handler implements Listener, CommandExecutor{
 						
 						String mess = "";
 						
-						if(amount % 10 == 1){mess=" деталь из 50";}
+						if(amount % 10 == 1){mess=" РґРµС‚Р°Р»СЊ РёР· 50";}
 						
-						if(amount % 10 == 2){mess=" детали из 50";}
+						if(amount % 10 == 2){mess=" РґРµС‚Р°Р»Рё РёР· 50";}
 						
-						if(amount % 10 == 3){mess=" детали из 50";}
+						if(amount % 10 == 3){mess=" РґРµС‚Р°Р»Рё РёР· 50";}
 						
-						if(amount % 10 == 4){mess=" детали из 50";}
+						if(amount % 10 == 4){mess=" РґРµС‚Р°Р»Рё РёР· 50";}
 						
-						if((amount % 10 >= 5) || (amount % 10 == 0)){mess=" деталей из 50";}
+						if((amount % 10 >= 5) || (amount % 10 == 0)){mess=" РґРµС‚Р°Р»РµР№ РёР· 50";}
 						
-						p.sendMessage(ChatColor.GRAY + "[Рация]" + " ...");
+						p.sendMessage(ChatColor.GRAY + "[Р Р°С†РёСЏ]" + " ...");
 						
-						p.sendMessage(ChatColor.GRAY + "[Рация]" + " Командир: " + ChatColor.WHITE + "Продолжай искать детали!");
+						p.sendMessage(ChatColor.GRAY + "[Р Р°С†РёСЏ]" + " РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РџСЂРѕРґРѕР»Р¶Р°Р№ РёСЃРєР°С‚СЊ РґРµС‚Р°Р»Рё!");
 						
-						p.sendMessage(ChatColor.GRAY + "[Рация]" + " Командир: " + ChatColor.WHITE + "Пока ты собрал " + amount + mess);
+						p.sendMessage(ChatColor.GRAY + "[Р Р°С†РёСЏ]" + " РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РџРѕРєР° С‚С‹ СЃРѕР±СЂР°Р» " + amount + mess);
 						
-						p.sendMessage(ChatColor.GRAY + "[Рация]" + " ...");		
+						p.sendMessage(ChatColor.GRAY + "[Р Р°С†РёСЏ]" + " ...");		
 						
 					}
 					
 				}				
 
 
-				/*Команда EVENT. Если рядом с NPC. КОНЕЦ*/
+				/*РљРѕРјР°РЅРґР° EVENT. Р•СЃР»Рё СЂСЏРґРѕРј СЃ NPC. РљРћРќР•Р¦*/
 			
-				/*Команда EVENT. Если далеко от NPC. НАЧАЛО*/
+				/*РљРѕРјР°РЅРґР° EVENT. Р•СЃР»Рё РґР°Р»РµРєРѕ РѕС‚ NPC. РќРђР§РђР›Рћ*/
 				else {
 					
-					/*Команда EVENT. Если есть PEX. НАЧАЛО*/
+					/*РљРѕРјР°РЅРґР° EVENT. Р•СЃР»Рё РµСЃС‚СЊ PEX. РќРђР§РђР›Рћ*/
 					if (p.hasPermission("dr.events.start")) {
 						
 						int amount = settings.getData().getInt(p.getName() + ".amount");
 						
-						/*Команда EVENT. Если Собраны все детали. НАЧАЛО*/
+						/*РљРѕРјР°РЅРґР° EVENT. Р•СЃР»Рё РЎРѕР±СЂР°РЅС‹ РІСЃРµ РґРµС‚Р°Р»Рё. РќРђР§РђР›Рћ*/
 						if((amount >= 50) && (!p.hasPermission("dr.events.rewardoff"))) {
 							
-							p.sendMessage(ChatColor.GRAY + "[Рация]" + " ...");
+							p.sendMessage(ChatColor.GRAY + "[Р Р°С†РёСЏ]" + " ...");
 							
-							p.sendMessage(ChatColor.GRAY + "[Рация]" + " Командир: " + ChatColor.WHITE + "О, здоров! Приходи на наградой!");
+							p.sendMessage(ChatColor.GRAY + "[Р Р°С†РёСЏ]" + " РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "Рћ, Р·РґРѕСЂРѕРІ! РџСЂРёС…РѕРґРё РЅР° РЅР°РіСЂР°РґРѕР№!");
 							
-							p.sendMessage(ChatColor.GRAY + "[Рация]" + " ...");
+							p.sendMessage(ChatColor.GRAY + "[Р Р°С†РёСЏ]" + " ...");
 							
 							return true;
 							
@@ -441,73 +441,73 @@ public class Handler implements Listener, CommandExecutor{
 						
 						if(amount >= 50){				
 							
-							p.sendMessage(ChatColor.GRAY + "[Рация]" + " ...");
+							p.sendMessage(ChatColor.GRAY + "[Р Р°С†РёСЏ]" + " ...");
 							
-							p.sendMessage(ChatColor.GRAY + "[Рация]" + " Командир: " + ChatColor.WHITE + "О, здоров! Спасибо еще раз за помощь!");
+							p.sendMessage(ChatColor.GRAY + "[Р Р°С†РёСЏ]" + " РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "Рћ, Р·РґРѕСЂРѕРІ! РЎРїР°СЃРёР±Рѕ РµС‰Рµ СЂР°Р· Р·Р° РїРѕРјРѕС‰СЊ!");
 							
-							p.sendMessage(ChatColor.GRAY + "[Рация]" + " ...");
+							p.sendMessage(ChatColor.GRAY + "[Р Р°С†РёСЏ]" + " ...");
 							
 							return true;
 							
 						}
-						/*Команда EVENT. Если Собраны все детали. КОНЕЦ*/
+						/*РљРѕРјР°РЅРґР° EVENT. Р•СЃР»Рё РЎРѕР±СЂР°РЅС‹ РІСЃРµ РґРµС‚Р°Р»Рё. РљРћРќР•Р¦*/
 						
-						/*Команда EVENT. Если не собраны детали. НАЧАЛО*/
+						/*РљРѕРјР°РЅРґР° EVENT. Р•СЃР»Рё РЅРµ СЃРѕР±СЂР°РЅС‹ РґРµС‚Р°Р»Рё. РќРђР§РђР›Рћ*/
 						String mess = "";
 						
-						if(amount % 10 == 1){mess=" деталь из 50";}
+						if(amount % 10 == 1){mess=" РґРµС‚Р°Р»СЊ РёР· 50";}
 						
-						if(amount % 10 == 2){mess=" детали из 50";}
+						if(amount % 10 == 2){mess=" РґРµС‚Р°Р»Рё РёР· 50";}
 						
-						if(amount % 10 == 3){mess=" детали из 50";}
+						if(amount % 10 == 3){mess=" РґРµС‚Р°Р»Рё РёР· 50";}
 						
-						if(amount % 10 == 4){mess=" детали из 50";}
+						if(amount % 10 == 4){mess=" РґРµС‚Р°Р»Рё РёР· 50";}
 						
-						if((amount % 10 >= 5) || (amount % 10 == 0)){mess=" деталей из 50";}
+						if((amount % 10 >= 5) || (amount % 10 == 0)){mess=" РґРµС‚Р°Р»РµР№ РёР· 50";}
 						
-						p.sendMessage(ChatColor.GRAY + "[Рация]" + " ...");
+						p.sendMessage(ChatColor.GRAY + "[Р Р°С†РёСЏ]" + " ...");
 						
-						p.sendMessage(ChatColor.GRAY + "[Рация]" + " Командир: " + ChatColor.WHITE + "Продолжай искать детали!");
+						p.sendMessage(ChatColor.GRAY + "[Р Р°С†РёСЏ]" + " РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РџСЂРѕРґРѕР»Р¶Р°Р№ РёСЃРєР°С‚СЊ РґРµС‚Р°Р»Рё!");
 						
-						p.sendMessage(ChatColor.GRAY + "[Рация]" + " Командир: " + ChatColor.WHITE + "Пока ты собрал " + amount + mess);
+						p.sendMessage(ChatColor.GRAY + "[Р Р°С†РёСЏ]" + " РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РџРѕРєР° С‚С‹ СЃРѕР±СЂР°Р» " + amount + mess);
 						
-						p.sendMessage(ChatColor.GRAY + "[Рация]" + " ...");
+						p.sendMessage(ChatColor.GRAY + "[Р Р°С†РёСЏ]" + " ...");
 						
-						/*Команда EVENT. Если не собраны детали. КОНЕЦ*/
+						/*РљРѕРјР°РЅРґР° EVENT. Р•СЃР»Рё РЅРµ СЃРѕР±СЂР°РЅС‹ РґРµС‚Р°Р»Рё. РљРћРќР•Р¦*/
 						
 					}				
-					/*Команда EVENT. Если есть PEX. КОНЕЦ*/
+					/*РљРѕРјР°РЅРґР° EVENT. Р•СЃР»Рё РµСЃС‚СЊ PEX. РљРћРќР•Р¦*/
 					
-					/*Команда EVENT. Если нет PEX. НАЧАЛО*/
+					/*РљРѕРјР°РЅРґР° EVENT. Р•СЃР»Рё РЅРµС‚ PEX. РќРђР§РђР›Рћ*/
 					if(!p.hasPermission("dr.events.start")) {
 						
-						p.sendMessage(ChatColor.YELLOW + "[Ивент]" + ChatColor.WHITE + " Чтобы начать инвент, нужно найти Командира дирижабля.");
+						p.sendMessage(ChatColor.YELLOW + "[РРІРµРЅС‚]" + ChatColor.WHITE + " Р§С‚РѕР±С‹ РЅР°С‡Р°С‚СЊ РёРЅРІРµРЅС‚, РЅСѓР¶РЅРѕ РЅР°Р№С‚Рё РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ.");
 						
 						return true;
 						
 					}
-					/*Команда EVENT. Если нет PEX. КОНЕЦ*/
+					/*РљРѕРјР°РЅРґР° EVENT. Р•СЃР»Рё РЅРµС‚ PEX. РљРћРќР•Р¦*/
 	
 				}
-				/*Команда EVENT. Если далеко от NPC. КОНЕЦ*/
+				/*РљРѕРјР°РЅРґР° EVENT. Р•СЃР»Рё РґР°Р»РµРєРѕ РѕС‚ NPC. РљРћРќР•Р¦*/
 			
 
-				/*Команда EVENT. Начало ивента. КОНЕЦ*/
+				/*РљРѕРјР°РЅРґР° EVENT. РќР°С‡Р°Р»Рѕ РёРІРµРЅС‚Р°. РљРћРќР•Р¦*/
 				
 				return true;
 				
 		}
 		
-			/*Команда EVENT. КОНЕЦ*/
+			/*РљРѕРјР°РЅРґР° EVENT. РљРћРќР•Р¦*/
 		
 		int amount = settings.getData().getInt(p.getName() + ".amount");
 		
-		/*Награда. НАЧАЛО*/
+		/*РќР°РіСЂР°РґР°. РќРђР§РђР›Рћ*/
 		
-		/*Награда броня. НАЧАЛО*/
+		/*РќР°РіСЂР°РґР° Р±СЂРѕРЅСЏ. РќРђР§РђР›Рћ*/
 		if (cmd.getName().equals("event") && (args.length == 1) && (args[0].compareToIgnoreCase("armor") == 0) && (amount >= 50) && (!p.hasPermission("dr.events.rewardoff"))) {
 			
-			//Проверка инвентаря
+			//РџСЂРѕРІРµСЂРєР° РёРЅРІРµРЅС‚Р°СЂСЏ
 			PlayerInventory pi = p.getInventory();
 			
 			int value = 0;
@@ -528,25 +528,25 @@ public class Handler implements Listener, CommandExecutor{
 			
 			if (((X >= 14) && (X <= 24)) && ((Y >= 95) && (Y <= 105)) && ((Z >= 193) && (Z <= 203))) {
 				
-				if (value < 5) {p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "Хм... Куда ты собрался складывать вещи? Освободи инвентарь."); return true;}
+				if (value < 5) {p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РҐРј... РљСѓРґР° С‚С‹ СЃРѕР±СЂР°Р»СЃСЏ СЃРєР»Р°РґС‹РІР°С‚СЊ РІРµС‰Рё? РћСЃРІРѕР±РѕРґРё РёРЅРІРµРЅС‚Р°СЂСЊ."); return true;}
 			
 			}
 			else{
 				
-				p.sendMessage(ChatColor.GRAY + "[Рация]" + " ...");
+				p.sendMessage(ChatColor.GRAY + "[Р Р°С†РёСЏ]" + " ...");
 				
-				p.sendMessage(ChatColor.GRAY + "[Рация]" + " Командир: " + ChatColor.WHITE + "Ну ты и странный. Как я тебе по воздуху передам вещи?");
+				p.sendMessage(ChatColor.GRAY + "[Р Р°С†РёСЏ]" + " РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РќСѓ С‚С‹ Рё СЃС‚СЂР°РЅРЅС‹Р№. РљР°Рє СЏ С‚РµР±Рµ РїРѕ РІРѕР·РґСѓС…Сѓ РїРµСЂРµРґР°Рј РІРµС‰Рё?");
 				
-				p.sendMessage(ChatColor.GRAY + "[Рация]" + " Командир: " + ChatColor.WHITE + "Я шататься туда-сюда не собираюсь. Приходи ко мне и забери их.");
+				p.sendMessage(ChatColor.GRAY + "[Р Р°С†РёСЏ]" + " РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РЇ С€Р°С‚Р°С‚СЊСЃСЏ С‚СѓРґР°-СЃСЋРґР° РЅРµ СЃРѕР±РёСЂР°СЋСЃСЊ. РџСЂРёС…РѕРґРё РєРѕ РјРЅРµ Рё Р·Р°Р±РµСЂРё РёС….");
 				
-				p.sendMessage(ChatColor.GRAY + "[Рация]" + " ...");
+				p.sendMessage(ChatColor.GRAY + "[Р Р°С†РёСЏ]" + " ...");
 				
 				return true;
 				
 			}
-			//Проверка инвентаря
+			//РџСЂРѕРІРµСЂРєР° РёРЅРІРµРЅС‚Р°СЂСЏ
 			
-			//Каска		
+			//РљР°СЃРєР°		
 			ItemStack item = new ItemStack(Material.DIAMOND_HELMET, 2);
 			
 			item.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
@@ -561,16 +561,16 @@ public class Handler implements Listener, CommandExecutor{
 			item.addEnchantment(Enchantment.THORNS, 3);
 			
 			ItemMeta itemmeta = item.getItemMeta();
-			itemmeta.setDisplayName(ChatColor.BLUE + "Каска");
+			itemmeta.setDisplayName(ChatColor.BLUE + "РљР°СЃРєР°");
 			List<String> lore = new ArrayList<String>();
 			
 			lore.add(" ");
 			lore.add(" ");
-			lore.add(ChatColor.WHITE + "Эта каска защитит твою голову от внешних воздействий.");
-			lore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+			lore.add(ChatColor.WHITE + "Р­С‚Р° РєР°СЃРєР° Р·Р°С‰РёС‚РёС‚ С‚РІРѕСЋ РіРѕР»РѕРІСѓ РѕС‚ РІРЅРµС€РЅРёС… РІРѕР·РґРµР№СЃС‚РІРёР№.");
+			lore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 			lore.add(" ");
 			lore.add(" ");
-			lore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+			lore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			lore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");
 			
 			itemmeta.setLore(lore);
@@ -579,9 +579,9 @@ public class Handler implements Listener, CommandExecutor{
 			
 			pi.addItem(item);
 			
-			//Каска	
+			//РљР°СЃРєР°	
 			
-			//Бронежилет
+			//Р‘СЂРѕРЅРµР¶РёР»РµС‚
 			item = new ItemStack(Material.DIAMOND_CHESTPLATE, 2);
 			
 			item.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
@@ -592,24 +592,24 @@ public class Handler implements Listener, CommandExecutor{
 			item.addEnchantment(Enchantment.DURABILITY, 3);
 			
 			itemmeta = item.getItemMeta();
-			itemmeta.setDisplayName(ChatColor.BLUE + "Бронежилет");
+			itemmeta.setDisplayName(ChatColor.BLUE + "Р‘СЂРѕРЅРµР¶РёР»РµС‚");
 			List<String> itemlore = new ArrayList<String>();
 			
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.WHITE + "Этот бронежилет защищает от колото-резаных ран.");
-			itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+			itemlore.add(ChatColor.WHITE + "Р­С‚РѕС‚ Р±СЂРѕРЅРµР¶РёР»РµС‚ Р·Р°С‰РёС‰Р°РµС‚ РѕС‚ РєРѕР»РѕС‚Рѕ-СЂРµР·Р°РЅС‹С… СЂР°РЅ.");
+			itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+			itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");
 			
 			itemmeta.setLore(itemlore);
 			item.setItemMeta(itemmeta);
 			pi.addItem(item);
-			//Бронежилет
+			//Р‘СЂРѕРЅРµР¶РёР»РµС‚
 			
-			//Штаны
+			//РЁС‚Р°РЅС‹
 			item = new ItemStack(Material.DIAMOND_LEGGINGS, 2);
 			
 			item.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
@@ -620,24 +620,24 @@ public class Handler implements Listener, CommandExecutor{
 			item.addEnchantment(Enchantment.DURABILITY, 3);
 			
 			itemmeta = item.getItemMeta();
-			itemmeta.setDisplayName(ChatColor.BLUE + "Штаны");
+			itemmeta.setDisplayName(ChatColor.BLUE + "РЁС‚Р°РЅС‹");
 			itemlore = new ArrayList<String>();
 			
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.WHITE + "Эти штаны без подворотов. Ты ж не петух?");
-			itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+			itemlore.add(ChatColor.WHITE + "Р­С‚Рё С€С‚Р°РЅС‹ Р±РµР· РїРѕРґРІРѕСЂРѕС‚РѕРІ. РўС‹ Р¶ РЅРµ РїРµС‚СѓС…?");
+			itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+			itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");
 			
 			itemmeta.setLore(itemlore);
 			item.setItemMeta(itemmeta);
 			pi.addItem(item);			
-			//Штаны
+			//РЁС‚Р°РЅС‹
 			
-			//Берцы
+			//Р‘РµСЂС†С‹
 			item = new ItemStack(Material.DIAMOND_BOOTS, 2);
 			
 			item.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
@@ -652,16 +652,16 @@ public class Handler implements Listener, CommandExecutor{
 			item.addEnchantment(Enchantment.FROST_WALKER, 1);
 			
 			itemmeta = item.getItemMeta();
-			itemmeta.setDisplayName(ChatColor.BLUE + "Берцы");
+			itemmeta.setDisplayName(ChatColor.BLUE + "Р‘РµСЂС†С‹");
 			itemlore = new ArrayList<String>();
 			
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.WHITE + "Такими берцами можно давить своих противников!");
-			itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+			itemlore.add(ChatColor.WHITE + "РўР°РєРёРјРё Р±РµСЂС†Р°РјРё РјРѕР¶РЅРѕ РґР°РІРёС‚СЊ СЃРІРѕРёС… РїСЂРѕС‚РёРІРЅРёРєРѕРІ!");
+			itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+			itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");
 			
 			itemmeta.setLore(itemlore);
@@ -670,25 +670,25 @@ public class Handler implements Listener, CommandExecutor{
 			
 			pi.addItem(item);	
 			
-			//Берцы
+			//Р‘РµСЂС†С‹
 			
-			//Элитры
+			//Р­Р»РёС‚СЂС‹
 			item = new ItemStack(Material.ELYTRA, 2);
 
 			item.addEnchantment(Enchantment.MENDING, 1);
 			item.addEnchantment(Enchantment.DURABILITY, 3);
 			
 			itemmeta = item.getItemMeta();
-			itemmeta.setDisplayName(ChatColor.BLUE + "Элитры");
+			itemmeta.setDisplayName(ChatColor.BLUE + "Р­Р»РёС‚СЂС‹");
 			itemlore = new ArrayList<String>();
 			
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.WHITE + "Люди не летают? Ну-ка одевай элитры!");
-			itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+			itemlore.add(ChatColor.WHITE + "Р›СЋРґРё РЅРµ Р»РµС‚Р°СЋС‚? РќСѓ-РєР° РѕРґРµРІР°Р№ СЌР»РёС‚СЂС‹!");
+			itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+			itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");
 			
 			itemmeta.setLore(itemlore);
@@ -697,21 +697,21 @@ public class Handler implements Listener, CommandExecutor{
 			
 			pi.addItem(item);	
 			
-			//Элитры
+			//Р­Р»РёС‚СЂС‹
 			
-			p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "Хороший выбор. Лично я предпочел бы инструменты.");
+			p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РҐРѕСЂРѕС€РёР№ РІС‹Р±РѕСЂ. Р›РёС‡РЅРѕ СЏ РїСЂРµРґРїРѕС‡РµР» Р±С‹ РёРЅСЃС‚СЂСѓРјРµРЅС‚С‹.");
 			
 			Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user" + " " + p.getName() + " " + "add" + " " + "dr.events.rewardoff");
 			
 			return true;
 			
 		}
-		/*Награда броня. КОНЕЦ*/
+		/*РќР°РіСЂР°РґР° Р±СЂРѕРЅСЏ. РљРћРќР•Р¦*/
 		
-		/*Награда блоки. НАЧАЛО*/
+		/*РќР°РіСЂР°РґР° Р±Р»РѕРєРё. РќРђР§РђР›Рћ*/
 		if (cmd.getName().equals("event") && (args.length == 1) && (args[0].compareToIgnoreCase("blocks") == 0) && (amount >= 50) && (!p.hasPermission("dr.events.rewardoff"))) {
 			
-			//Проверка
+			//РџСЂРѕРІРµСЂРєР°
 			PlayerInventory pi = p.getInventory();
 			
 			int value = 0;
@@ -732,35 +732,35 @@ public class Handler implements Listener, CommandExecutor{
 			
 			if (((X >= 14) && (X <= 24)) && ((Y >= 95) && (Y <= 105)) && ((Z >= 193) && (Z <= 203)) && (world.compareToIgnoreCase("world") == 0)) {
 				
-				if (value < 36) {p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "Хм... Куда ты собрался складывать вещи? Освободи инвентарь."); return true;}
+				if (value < 36) {p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РҐРј... РљСѓРґР° С‚С‹ СЃРѕР±СЂР°Р»СЃСЏ СЃРєР»Р°РґС‹РІР°С‚СЊ РІРµС‰Рё? РћСЃРІРѕР±РѕРґРё РёРЅРІРµРЅС‚Р°СЂСЊ."); return true;}
 			
 			}
 			else{
 				
-				p.sendMessage(ChatColor.GRAY + "[Рация]" + " ...");
+				p.sendMessage(ChatColor.GRAY + "[Р Р°С†РёСЏ]" + " ...");
 				
-				p.sendMessage(ChatColor.GRAY + "[Рация]" + " Командир: " + ChatColor.WHITE + "Ну ты и странный. Как я тебе по воздуху передам вещи?");
+				p.sendMessage(ChatColor.GRAY + "[Р Р°С†РёСЏ]" + " РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РќСѓ С‚С‹ Рё СЃС‚СЂР°РЅРЅС‹Р№. РљР°Рє СЏ С‚РµР±Рµ РїРѕ РІРѕР·РґСѓС…Сѓ РїРµСЂРµРґР°Рј РІРµС‰Рё?");
 				
-				p.sendMessage(ChatColor.GRAY + "[Рация]" + " Командир: " + ChatColor.WHITE + "Я шататься туда-сюда не собираюсь. Приходи ко мне и забери их.");
+				p.sendMessage(ChatColor.GRAY + "[Р Р°С†РёСЏ]" + " РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РЇ С€Р°С‚Р°С‚СЊСЃСЏ С‚СѓРґР°-СЃСЋРґР° РЅРµ СЃРѕР±РёСЂР°СЋСЃСЊ. РџСЂРёС…РѕРґРё РєРѕ РјРЅРµ Рё Р·Р°Р±РµСЂРё РёС….");
 				
-				p.sendMessage(ChatColor.GRAY + "[Рация]" + " ...");
+				p.sendMessage(ChatColor.GRAY + "[Р Р°С†РёСЏ]" + " ...");
 				
 				return true;
 				
 			}
 			
-			//Проверка
+			//РџСЂРѕРІРµСЂРєР°
 			
-			//Блоки
+			//Р‘Р»РѕРєРё
 			ItemStack item = new ItemStack(Material.IRON_ORE, 128);
 			ItemMeta itemmeta = item.getItemMeta();
 			List<String> itemlore = new ArrayList<String>();
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+			itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+			itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");			
 			itemmeta.setLore(itemlore);
 			item.setItemMeta(itemmeta);
@@ -771,10 +771,10 @@ public class Handler implements Listener, CommandExecutor{
 			itemlore = new ArrayList<String>();	
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+			itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+			itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");			
 			itemmeta.setLore(itemlore);
 			item.setItemMeta(itemmeta);
@@ -785,10 +785,10 @@ public class Handler implements Listener, CommandExecutor{
 			itemlore = new ArrayList<String>();	
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+			itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+			itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");			
 			itemmeta.setLore(itemlore);
 			item.setItemMeta(itemmeta);
@@ -799,10 +799,10 @@ public class Handler implements Listener, CommandExecutor{
 			itemlore = new ArrayList<String>();	
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+			itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+			itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");			
 			itemmeta.setLore(itemlore);
 			item.setItemMeta(itemmeta);
@@ -813,10 +813,10 @@ public class Handler implements Listener, CommandExecutor{
 			itemlore = new ArrayList<String>();	
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+			itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+			itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");			
 			itemmeta.setLore(itemlore);
 			item.setItemMeta(itemmeta);
@@ -827,10 +827,10 @@ public class Handler implements Listener, CommandExecutor{
 			itemlore = new ArrayList<String>();	
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+			itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+			itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");			
 			itemmeta.setLore(itemlore);
 			item.setItemMeta(itemmeta);
@@ -841,10 +841,10 @@ public class Handler implements Listener, CommandExecutor{
 			itemlore = new ArrayList<String>();	
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+			itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+			itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");			
 			itemmeta.setLore(itemlore);
 			item.setItemMeta(itemmeta);
@@ -855,10 +855,10 @@ public class Handler implements Listener, CommandExecutor{
 			itemlore = new ArrayList<String>();	
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+			itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+			itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");			
 			itemmeta.setLore(itemlore);
 			item.setItemMeta(itemmeta);
@@ -869,10 +869,10 @@ public class Handler implements Listener, CommandExecutor{
 			itemlore = new ArrayList<String>();	
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+			itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+			itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");			
 			itemmeta.setLore(itemlore);
 			item.setItemMeta(itemmeta);
@@ -883,10 +883,10 @@ public class Handler implements Listener, CommandExecutor{
 			itemlore = new ArrayList<String>();	
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+			itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+			itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");			
 			itemmeta.setLore(itemlore);
 			item.setItemMeta(itemmeta);
@@ -897,10 +897,10 @@ public class Handler implements Listener, CommandExecutor{
 			itemlore = new ArrayList<String>();	
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+			itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+			itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");			
 			itemmeta.setLore(itemlore);
 			item.setItemMeta(itemmeta);
@@ -911,10 +911,10 @@ public class Handler implements Listener, CommandExecutor{
 			itemlore = new ArrayList<String>();	
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+			itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+			itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");			
 			itemmeta.setLore(itemlore);
 			item.setItemMeta(itemmeta);
@@ -925,10 +925,10 @@ public class Handler implements Listener, CommandExecutor{
 			itemlore = new ArrayList<String>();	
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+			itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+			itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");			
 			itemmeta.setLore(itemlore);
 			item.setItemMeta(itemmeta);
@@ -939,10 +939,10 @@ public class Handler implements Listener, CommandExecutor{
 			itemlore = new ArrayList<String>();	
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+			itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+			itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");			
 			itemmeta.setLore(itemlore);
 			item.setItemMeta(itemmeta);
@@ -953,10 +953,10 @@ public class Handler implements Listener, CommandExecutor{
 			itemlore = new ArrayList<String>();	
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+			itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+			itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");			
 			itemmeta.setLore(itemlore);
 			item.setItemMeta(itemmeta);
@@ -967,10 +967,10 @@ public class Handler implements Listener, CommandExecutor{
 			itemlore = new ArrayList<String>();	
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+			itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+			itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");			
 			itemmeta.setLore(itemlore);
 			item.setItemMeta(itemmeta);
@@ -981,10 +981,10 @@ public class Handler implements Listener, CommandExecutor{
 			itemlore = new ArrayList<String>();	
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+			itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+			itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");			
 			itemmeta.setLore(itemlore);
 			item.setItemMeta(itemmeta);
@@ -995,10 +995,10 @@ public class Handler implements Listener, CommandExecutor{
 			itemlore = new ArrayList<String>();	
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+			itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+			itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");			
 			itemmeta.setLore(itemlore);
 			item.setItemMeta(itemmeta);
@@ -1009,26 +1009,26 @@ public class Handler implements Listener, CommandExecutor{
 			itemlore = new ArrayList<String>();	
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+			itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+			itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");			
 			itemmeta.setLore(itemlore);
 			item.setItemMeta(itemmeta);
 			pi.addItem(item);
 			
-			//Блоки
+			//Р‘Р»РѕРєРё
 			
-			p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "Хороший выбор. Лично я предпочел бы броню.");
+			p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РҐРѕСЂРѕС€РёР№ РІС‹Р±РѕСЂ. Р›РёС‡РЅРѕ СЏ РїСЂРµРґРїРѕС‡РµР» Р±С‹ Р±СЂРѕРЅСЋ.");
 			Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user" + " " + p.getName() + " " + "add" + " " + "dr.events.rewardoff");
 			return true;
 		}
-		/*Награда блоки. КОНЕЦ*/
+		/*РќР°РіСЂР°РґР° Р±Р»РѕРєРё. РљРћРќР•Р¦*/
 		
-		/*Награда инструменты. НАЧАЛО*/		
+		/*РќР°РіСЂР°РґР° РёРЅСЃС‚СЂСѓРјРµРЅС‚С‹. РќРђР§РђР›Рћ*/		
 		if (cmd.getName().equals("event") && (args.length == 1) && (args[0].compareToIgnoreCase("tools") == 0) && (amount >= 50) && (!p.hasPermission("dr.events.rewardoff"))) {
-			//Проверка
+			//РџСЂРѕРІРµСЂРєР°
 			PlayerInventory pi = p.getInventory();
 			int value = 0;
 			
@@ -1044,18 +1044,18 @@ public class Handler implements Listener, CommandExecutor{
 			Y = (int) p.getLocation().getY();
 			Z = (int) p.getLocation().getZ();
 			if (((X >= 14) && (X <= 24)) && ((Y >= 95) && (Y <= 105)) && ((Z >= 193) && (Z <= 203))) {
-				if (value < 6) {p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "Хм... Куда ты собрался складывать вещи? Освободи инвентарь."); return true;}
+				if (value < 6) {p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РҐРј... РљСѓРґР° С‚С‹ СЃРѕР±СЂР°Р»СЃСЏ СЃРєР»Р°РґС‹РІР°С‚СЊ РІРµС‰Рё? РћСЃРІРѕР±РѕРґРё РёРЅРІРµРЅС‚Р°СЂСЊ."); return true;}
 			}
 			else{
-				p.sendMessage(ChatColor.GRAY + "[Рация]" + " ...");
-				p.sendMessage(ChatColor.GRAY + "[Рация]" + " Командир: " + ChatColor.WHITE + "Ну ты и странный. Как я тебе по воздуху передам вещи?");
-				p.sendMessage(ChatColor.GRAY + "[Рация]" + " Командир: " + ChatColor.WHITE + "Я шататься туда-сюда не собираюсь. Приходи ко мне и забери их.");
-				p.sendMessage(ChatColor.GRAY + "[Рация]" + " ...");
+				p.sendMessage(ChatColor.GRAY + "[Р Р°С†РёСЏ]" + " ...");
+				p.sendMessage(ChatColor.GRAY + "[Р Р°С†РёСЏ]" + " РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РќСѓ С‚С‹ Рё СЃС‚СЂР°РЅРЅС‹Р№. РљР°Рє СЏ С‚РµР±Рµ РїРѕ РІРѕР·РґСѓС…Сѓ РїРµСЂРµРґР°Рј РІРµС‰Рё?");
+				p.sendMessage(ChatColor.GRAY + "[Р Р°С†РёСЏ]" + " РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РЇ С€Р°С‚Р°С‚СЊСЃСЏ С‚СѓРґР°-СЃСЋРґР° РЅРµ СЃРѕР±РёСЂР°СЋСЃСЊ. РџСЂРёС…РѕРґРё РєРѕ РјРЅРµ Рё Р·Р°Р±РµСЂРё РёС….");
+				p.sendMessage(ChatColor.GRAY + "[Р Р°С†РёСЏ]" + " ...");
 				return true;
 			}
-			//Проверка
+			//РџСЂРѕРІРµСЂРєР°
 			
-			//Меч
+			//РњРµС‡
 			ItemStack item = new ItemStack(Material.DIAMOND_SWORD, 2);
 
 			item.addEnchantment(Enchantment.MENDING, 1);
@@ -1069,22 +1069,22 @@ public class Handler implements Listener, CommandExecutor{
 			item.addEnchantment(Enchantment.DURABILITY, 3);
 			
 			ItemMeta itemmeta = item.getItemMeta();
-			itemmeta.setDisplayName(ChatColor.BLUE + "Клинок");
+			itemmeta.setDisplayName(ChatColor.BLUE + "РљР»РёРЅРѕРє");
 			List<String> itemlore = new ArrayList<String>();
 			
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.WHITE + "Сувенирный клинок");
-			itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+			itemlore.add(ChatColor.WHITE + "РЎСѓРІРµРЅРёСЂРЅС‹Р№ РєР»РёРЅРѕРє");
+			itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+			itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");
 			
 			itemmeta.setLore(itemlore);
 			item.setItemMeta(itemmeta);
 			pi.addItem(item);					
-			//Меч
+			//РњРµС‡
 			
 			item = new ItemStack(Material.DIAMOND_PICKAXE, 2);
 
@@ -1096,16 +1096,16 @@ public class Handler implements Listener, CommandExecutor{
 			item.addEnchantment(Enchantment.DIG_SPEED, 5);
 			     
 			itemmeta = item.getItemMeta();
-			itemmeta.setDisplayName(ChatColor.BLUE + "Усиленная кирка");
+			itemmeta.setDisplayName(ChatColor.BLUE + "РЈСЃРёР»РµРЅРЅР°СЏ РєРёСЂРєР°");
 			itemlore = new ArrayList<String>();
 			     
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.WHITE + "С такой киркой и в шахту ходить не стыдно!");
-			itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+			itemlore.add(ChatColor.WHITE + "РЎ С‚Р°РєРѕР№ РєРёСЂРєРѕР№ Рё РІ С€Р°С…С‚Сѓ С…РѕРґРёС‚СЊ РЅРµ СЃС‚С‹РґРЅРѕ!");
+			itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+			itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");
 			     
 		    itemmeta.setLore(itemlore);
@@ -1125,16 +1125,16 @@ public class Handler implements Listener, CommandExecutor{
 		    item.addEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 3);
 		      
 		    itemmeta = item.getItemMeta();
-		    itemmeta.setDisplayName(ChatColor.BLUE + "Топор дровосека");
+		    itemmeta.setDisplayName(ChatColor.BLUE + "РўРѕРїРѕСЂ РґСЂРѕРІРѕСЃРµРєР°");
 		    itemlore = new ArrayList<String>();
 		      
 		    itemlore.add(" ");
 		    itemlore.add(" ");
-		    itemlore.add(ChatColor.WHITE + "Топор как топор...");
-		    itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+		    itemlore.add(ChatColor.WHITE + "РўРѕРїРѕСЂ РєР°Рє С‚РѕРїРѕСЂ...");
+		    itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 		    itemlore.add(" ");
 		    itemlore.add(" ");
-		    itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+		    itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 		    itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");
 			      
 			itemmeta.setLore(itemlore);
@@ -1149,16 +1149,16 @@ public class Handler implements Listener, CommandExecutor{
 			item.addEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 3);
 			       
 			itemmeta = item.getItemMeta();
-			itemmeta.setDisplayName(ChatColor.BLUE + "Лопата");
+			itemmeta.setDisplayName(ChatColor.BLUE + "Р›РѕРїР°С‚Р°");
 			itemlore = new ArrayList<String>();
 			       
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.WHITE + "Лопата: Digger Online Edition");
-			itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+			itemlore.add(ChatColor.WHITE + "Р›РѕРїР°С‚Р°: Digger Online Edition");
+			itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 			itemlore.add(" ");
 			itemlore.add(" ");
-			itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+			itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");
 		       
 			itemmeta.setLore(itemlore);
@@ -1171,16 +1171,16 @@ public class Handler implements Listener, CommandExecutor{
 	        item.addEnchantment(Enchantment.DURABILITY, 3);
 			        
 	        itemmeta = item.getItemMeta();
-	        itemmeta.setDisplayName(ChatColor.BLUE + "Мотыга");
+	        itemmeta.setDisplayName(ChatColor.BLUE + "РњРѕС‚С‹РіР°");
 	        itemlore = new ArrayList<String>();
 			        
 	        itemlore.add(" ");
 	        itemlore.add(" ");
-	        itemlore.add(ChatColor.WHITE + "Продвинутый плуг xD");
-	        itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+	        itemlore.add(ChatColor.WHITE + "РџСЂРѕРґРІРёРЅСѓС‚С‹Р№ РїР»СѓРі xD");
+	        itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 	        itemlore.add(" ");
 	        itemlore.add(" ");
-	        itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+	        itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 	        itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");
 	        
 	        itemmeta.setLore(itemlore);
@@ -1194,16 +1194,16 @@ public class Handler implements Listener, CommandExecutor{
 	      	item.addEnchantment(Enchantment.LURE, 3);
 			         
 	        itemmeta = item.getItemMeta();
-	        itemmeta.setDisplayName(ChatColor.BLUE + "Спининг");
+	        itemmeta.setDisplayName(ChatColor.BLUE + "РЎРїРёРЅРёРЅРі");
 	        itemlore = new ArrayList<String>();
 			         
 	        itemlore.add(" ");
 	        itemlore.add(" ");
-	        itemlore.add(ChatColor.WHITE + "Новороченный спининг");
-	        itemlore.add(ChatColor.GOLD + "Награда от Командира дирижабля игроку " + p.getName() + ".");
+	        itemlore.add(ChatColor.WHITE + "РќРѕРІРѕСЂРѕС‡РµРЅРЅС‹Р№ СЃРїРёРЅРёРЅРі");
+	        itemlore.add(ChatColor.GOLD + "РќР°РіСЂР°РґР° РѕС‚ РљРѕРјР°РЅРґРёСЂР° РґРёСЂРёР¶Р°Р±Р»СЏ РёРіСЂРѕРєСѓ " + p.getName() + ".");
 	        itemlore.add(" ");
 	        itemlore.add(" ");
-         	itemlore.add(ChatColor.DARK_RED + "Ивент: \"Так точно, товарищ Командир!\" 2018");
+         	itemlore.add(ChatColor.DARK_RED + "РРІРµРЅС‚: \"РўР°Рє С‚РѕС‡РЅРѕ, С‚РѕРІР°СЂРёС‰ РљРѕРјР°РЅРґРёСЂ!\" 2018");
 			itemlore.add(ChatColor.DARK_GRAY + "vk.com/Daily_Rest_Group");
 			         
 			itemmeta.setLore(itemlore);
@@ -1212,21 +1212,21 @@ public class Handler implements Listener, CommandExecutor{
          	
          	pi.addItem(item);
          	
-         	p.sendMessage(ChatColor.DARK_AQUA + "Командир: " + ChatColor.WHITE + "Хороший выбор. Лично я предпочел бы броню.");
+         	p.sendMessage(ChatColor.DARK_AQUA + "РљРѕРјР°РЅРґРёСЂ: " + ChatColor.WHITE + "РҐРѕСЂРѕС€РёР№ РІС‹Р±РѕСЂ. Р›РёС‡РЅРѕ СЏ РїСЂРµРґРїРѕС‡РµР» Р±С‹ Р±СЂРѕРЅСЋ.");
 
 			Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user" + " " + p.getName() + " " + "add" + " " + "dr.events.rewardoff");
 			
 			return true;
 			
 		}
-		/*Награда инструменты. НАЧАЛО*/
+		/*РќР°РіСЂР°РґР° РёРЅСЃС‚СЂСѓРјРµРЅС‚С‹. РќРђР§РђР›Рћ*/
 		
-		/*Награда. КОНЕЦ*/
+		/*РќР°РіСЂР°РґР°. РљРћРќР•Р¦*/
 		
-		/*НаградаПОВТОР. НАЧАЛО*/
+		/*РќР°РіСЂР°РґР°РџРћР’РўРћР . РќРђР§РђР›Рћ*/
 		if (cmd.getName().equals("event") && (args.length == 1) && (args[0].compareToIgnoreCase("armor") == 0) && (amount >= 50) && (p.hasPermission("dr.events.rewardoff"))) {
 			
-			p.sendMessage(ChatColor.YELLOW + "[Ивент]" + " " + ChatColor.WHITE + "Ты уже получил награду.");
+			p.sendMessage(ChatColor.YELLOW + "[РРІРµРЅС‚]" + " " + ChatColor.WHITE + "РўС‹ СѓР¶Рµ РїРѕР»СѓС‡РёР» РЅР°РіСЂР°РґСѓ.");
 			
 			return true;
 		
@@ -1234,7 +1234,7 @@ public class Handler implements Listener, CommandExecutor{
 		
 		if (cmd.getName().equals("event") && (args.length == 1) && (args[0].compareToIgnoreCase("blocks") == 0) && (amount >= 50) && (p.hasPermission("dr.events.rewardoff"))) {
 			
-			p.sendMessage(ChatColor.YELLOW + "[Ивент]" + " " + ChatColor.WHITE + "Ты уже получил награду.");
+			p.sendMessage(ChatColor.YELLOW + "[РРІРµРЅС‚]" + " " + ChatColor.WHITE + "РўС‹ СѓР¶Рµ РїРѕР»СѓС‡РёР» РЅР°РіСЂР°РґСѓ.");
 			
 			return true;
 		
@@ -1242,7 +1242,7 @@ public class Handler implements Listener, CommandExecutor{
 		
 		if (cmd.getName().equals("event") && (args.length == 1) && (args[0].compareToIgnoreCase("tools") == 0) && (amount >= 50) && (p.hasPermission("dr.events.rewardoff"))) {
 			
-			p.sendMessage(ChatColor.YELLOW + "[Ивент]" + " " + ChatColor.WHITE + "Ты уже получил награду.");
+			p.sendMessage(ChatColor.YELLOW + "[РРІРµРЅС‚]" + " " + ChatColor.WHITE + "РўС‹ СѓР¶Рµ РїРѕР»СѓС‡РёР» РЅР°РіСЂР°РґСѓ.");
 			
 			return true;
 		
@@ -1258,7 +1258,7 @@ public class Handler implements Listener, CommandExecutor{
 		
 		}
 		
-		/*НаградаПОВТОР. КОНЕЦ*/
+		/*РќР°РіСЂР°РґР°РџРћР’РўРћР . РљРћРќР•Р¦*/
 		
 		return false;
 	
