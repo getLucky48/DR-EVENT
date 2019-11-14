@@ -1,0 +1,14 @@
+name: DR-EVENT
+main: events.main.Events
+version: 1.0.0
+author: getLucky48
+website: vk.com/getlucky48
+commands:
+  event:
+    usage: /event
+  eventreload:
+    usage: /eventreload
+  eventoff:
+    usage: /eventoff
+  eventon:
+    usage: /eventon
